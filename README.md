@@ -191,7 +191,7 @@ adb -s <デバイスのIPアドレス>:5555 shell id
 
 ## Part 2: Mirakurun のセットアップ
 
-> セットアップ以降は USB メモリを挿入して電源を入れるだけで、`mirakurun_proxy` サービスが起動時に Mirakurun を自動起動します（`make start` は不要）。  
+> セットアップ以降は USB メモリを挿入して電源を入れるだけで、`mirakurun_proxy` サービスが起動時に Mirakurun を自動起動します（`make start` は不要）。
 > ただし、安全のためクラッシュ時の自動再起動はしません。停止した場合は `make start` か再起動で復帰してください。
 
 ---
@@ -321,6 +321,14 @@ Streaming BS4K 45168 for 5s...
 ```sh
 ffplay http://<デバイスのIPアドレス>:40772/api/channels/BS4K/45168/stream
 ```
+
+### EPGStation で録画・視聴
+
+BS4K に対応した EPGStation フォークを使うと、Web UI から録画予約・視聴が行えます。
+
+- リポジトリ: [tsuyopon123/EPGStation](https://github.com/tsuyopon123/EPGStation)
+
+EPGStation をセットアップする際に `mirakurunPath` を `http://<デバイスのIPアドレス>:40772/` に設定してください。
 
 ---
 
